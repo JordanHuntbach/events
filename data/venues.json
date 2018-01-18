@@ -1,0 +1,44 @@
+{
+  "venues": {
+    "v_1": {
+      "name": "Grinton Lodge Youth Hostel",
+      "postcode": "DL11 6HS",
+      "town": "Richmond",
+      "url": "http://www.yha.org.uk/hostel/grinton-lodge",
+      "icon": "http://www.yha.org.uk/sites/all/themes/yha/images/logos/yha_header_logo.png"
+    },
+    "v_2": {
+      "name": "Sage Gateshead",
+      "postcode": "NE8 2JR",
+      "town": "Gateshead",
+      "url": "http://www.sagegateshead.com/",
+      "icon": "http://www.sagegateshead.com/files/images/pageimage/1683.7123dea7/630x397.fitandcrop.jpg"
+    },
+    "v_4": {
+      "name": "St. Hild's Lane",
+      "postcode": "DH1 1QL",
+      "town": "Durham"
+    },
+    "v_5": {
+      "name": "Sick Venue",
+      "postcode": "DH1 3LH",
+      "town": "Durham",
+      "url": "url",
+      "icon": "icon_url"
+    },
+    "v_3": {
+      "name": "Rockhill Farm",
+      "postcode": "SY8 3BT",
+      "town": "Ludlow",
+      "url": "http://cool.com",
+      "icon": "http://icon.com"
+    },
+    "v_6": {
+      "name": "Venue 6",
+      "postcode": "SY8 3BT",
+      "town": "Town",
+      "url": "https://venue.place",
+      "icon": "http://icon.com"
+    }
+  }
+}

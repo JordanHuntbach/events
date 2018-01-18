@@ -1,0 +1,4 @@
+applications:
+- name: events
+  route: events.eu-gb.mybluemix.net
+  memory: 128M

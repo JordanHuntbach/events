@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Events - Admin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="admin">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">kdkj55</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggle" aria-controls="navToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navToggle">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Events</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="admin.html">Admin <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="white">Admin Page</h2>
+                <div id="login_page">
+                    <form class="login_form" id="login">
+                        <div class="row justify-content-center">
+                            <div class="w-100"></div>
+                            <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 align-self-center">
+                                <input class="login_input" type="text" placeholder="Username" id="username">
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 align-self-center">
+                                <input class="login_input" type="password" placeholder="Password" id="password">
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 align-self-center">
+                                <button class="login_input btn btn-primary gradient" type="submit">Login</button>
+                            </div>
+                            <div class="w-100"></div>
+                        </div>
+                    </form>
+                </div>
+                <div id="admin_page" class="hidden">
+                    <button type="button" class="btn btn-primary gradient btn-admin" id="add_venue" data-toggle="modal" data-target="#venue_modal">Add Venue</button>
+                    <div id="venue_display">
+                        <p class="white" id="venue_disp">x venue(s) found.</p>
+                        <div class="container" id="venues_container">
+                            <div class="row justify-content-center" id="venue_row">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="venue_modal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal_title">Add Venue</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Venue Information</h5>
+                    <form id="venue_form">
+                        <input id="venue_name" class="modal-input" type="text" placeholder="Venue Name" required>
+                        <input id="venue_town" class="modal-input" type="text" placeholder="Venue Town">
+                        <input id="venue_postcode" class="modal-input" type="text" placeholder="Venue Postcode">
+                        <input id="venue_url" class="modal-input" type="text" placeholder="Venue URL">
+                        <input id="venue_icon" class="modal-input" type="text" placeholder="Venue Icon URL">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p id="warning" class="warning hidden">* Venue name is required.</p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary gradient" id="venue_submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="venue_modal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="venue_title">Venue Details</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="v_modal_body" class="modal-body">
+                    <h5>Venue Details</h5>
+                    <p id="v_name">Venue Name</p>
+                    <p id="v_town">Venue Town</p>
+                    <p id="v_postcode">Venue Postcode</p>
+                    <p id="v_url">
+                        <a href="http://www.yha.org.uk/hostel/grinton-lodge">Venue URL</a>
+                    </p>
+                    <p id="v_venue_id">Venue ID</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary gradient" data-dismiss="modal" id="add_event">Add Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="event_modal" role="dialog">
+        <p id="venue_passed" class="hidden">ID</p>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Event</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Event Information</h5>
+                    <form id="event_form">
+                        <input id="event_title" class="modal-input" type="text" placeholder="Event Name" required>
+                        <input id="event_id" class="modal-input" type="text" placeholder="Event ID">
+                        <input id="event_url" class="modal-input" type="text" placeholder="Event URL">
+                        <input id="event_blurb" class="modal-input" type="text" placeholder="Event Description">
+                        <input id="event_date" class="modal-input" type="text" placeholder="Event Date">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p id="warning2" class="warning hidden">* Venue name is required.</p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary gradient" id="event_submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
